@@ -273,6 +273,7 @@ const BackgroundCommands = {
       // throws this error: "Illegal URL: about:newtab".
       const urls = request.urls.filter((u) => u != Settings.defaultOptions.newTabUrl);
       const windowConfig = {
+
         url: urls,
         incognito: request.registryEntry.options.incognito || false,
       };
@@ -736,6 +737,22 @@ const sendRequestHandlers = {
   cancelCompletions(request) {
     const completer = completers[request.completerName];
     completer.cancel();
+  },
+
+  addToGroup(request) {
+    console.log("request recieved at addToGroup");
+    console.log(request.tabId);
+    chrome.tabs.group({tabIds: request.tabId}, groupId => {
+      console.log(groupId);
+      chrome.tabGroups.get(groupId, group => {
+        console.log(group);
+        group.title = request.tabName;
+      });
+      // chrome.tabGroups.move(groupId, {}, group => {
+      //   console.log("move func");
+      // });
+    }
+    );
   },
 };
 

@@ -342,6 +342,14 @@ const LinkHints = {
   activateModeToOpenInNewForegroundTab(count) {
     this.activateMode(count, { mode: OPEN_IN_NEW_FG_TAB });
   },
+  // Look into the trace of the calling of this function
+  // to add the function to add a tab to a group
+  // https://developer.chrome.com/docs/extensions/reference/api/tabGroups
+  // https://developer.chrome.com/docs/extensions/reference/api/tabs#method-group
+  // lets use ^ that function, and use the call back to get the group id
+  // then change the name and color wuuuuuuuuuuu
+  // after that, lets use the vomnibar to set a name, and show already existing
+  // groups!
   activateModeToCopyLinkUrl(count) {
     this.activateMode(count, { mode: COPY_LINK_URL });
   },

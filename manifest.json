@@ -18,6 +18,7 @@
   },
   "host_permissions": ["<all_urls>"],
   "permissions": [
+    "tabGroups",
     "tabs",
     "bookmarks",
     "history",

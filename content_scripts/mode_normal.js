@@ -361,6 +361,7 @@ const NormalModeCommands = {
   "Vomnibar.activateBookmarksInNewTab": Vomnibar.activateBookmarksInNewTab.bind(Vomnibar),
   "Vomnibar.activateEditUrl": Vomnibar.activateEditUrl.bind(Vomnibar),
   "Vomnibar.activateEditUrlInNewTab": Vomnibar.activateEditUrlInNewTab.bind(Vomnibar),
+  "Vomnibar.addToGroup": Vomnibar.addToGroup.bind(Vomnibar),
 
   "Marks.activateCreateMode": Marks.activateCreateMode.bind(Marks),
   "Marks.activateGotoMode": Marks.activateGotoMode.bind(Marks),

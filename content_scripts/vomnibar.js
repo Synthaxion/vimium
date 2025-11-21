@@ -57,6 +57,32 @@ const Vomnibar = {
       newTab: true,
     });
   },
+  // Look into the trace of the calling of this function
+  // to add the function to add a tab to a group
+  // https://developer.chrome.com/docs/extensions/reference/api/tabGroups
+  // https://developer.chrome.com/docs/extensions/reference/api/tabs#method-group
+  // lets use ^ that function, and use the call back to get the group id
+  // then change the name and color wuuuuuuuuuuu
+  // after that, lets use the vomnibar to set a name, and show already existing
+  // groups!
+  addToGroup(sourceFrameId) {
+    // this.open(sourceFrameId, {
+    //   completer: "omni",
+    //   selectFirst: false,
+    //   query: globalThis.location.href,
+    //   newTab: true,
+    // });
+    // since we can't access tab groups from here maybe we need to use a popup script
+    console.log("sending msg");
+    chrome.runtime.sendMessage({
+      handler: "addToGroup",
+      tabName: "some tab name"
+    }, (res) => {
+      console.log("received");
+      console.log(res);
+    });
+    console.log(sourceFrameId);
+  },
 
   init() {
     if (!this.vomnibarUI) {

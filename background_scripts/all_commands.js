@@ -357,7 +357,12 @@ const allCommands = [
     group: "vomnibar",
     topFrame: true,
   },
-
+  {
+    name: "Vomnibar.addToGroup",
+    desc: "Add the current tab to a tab group",
+    group: "vomnibar",
+    topFrame: true,
+  },
   //
   // Find
   //
